@@ -35,6 +35,11 @@ if CLIENT then
     local damageAlphaDecay = 200
     local damageFadeSpeed = 10
 
+
+    local hp_icon = Material("materials/health.png")
+    local ar_icon = Material("materials/armor.png")
+    local hg_icon = Material("materials/hunger.png")
+
     hook.Add("HUDShouldDraw", "HideDefaultHUD", function(name)
         if hideHUD[name] then return false end
     end)
@@ -124,8 +129,6 @@ if CLIENT then
         surface.SetDrawColor(0, 153, 0, 255)
         surface.DrawRect(hungerX, hungerY, hungerBarWidth, hungerHeight)
 
-        surface.SetTextPos(hungerX + hungerWidth - 40, hungerY - 1)
-        surface.DrawText(hunger)
         surface.SetFont("LobsterFont")
         surface.SetTextColor(255, 255, 255, 255)
         surface.SetTextPos(healthX + healthWidth - 40, healthY)
@@ -159,5 +162,24 @@ if CLIENT then
         surface.SetFont("Roboto-Bold-2")
         surface.SetTextPos(moneyX + 10, moneyY)
         surface.DrawText("Токены: " .. money)
+
+-- Иконка здоровья
+        local iconSize = 24
+        surface.SetDrawColor(255, 255, 255, 255)  -- Установка цвета для текстуры
+        surface.SetMaterial(hp_icon)  -- Установка используемой текстуры
+        surface.DrawTexturedRect(healthX - iconSize + 330, healthY, iconSize, iconSize)
+
+-- Иконка армора
+        local iconSize = 24
+        surface.SetDrawColor(255, 255, 255, 255)  -- Установка цвета для текстуры
+        surface.SetMaterial(ar_icon)  -- Установка используемой текстуры
+        surface.DrawTexturedRect(armorX - iconSize + 330, armorY, iconSize, iconSize)
+
+-- Иконка голода
+        local iconSize = 24
+        surface.SetDrawColor(255, 255, 255, 255)  -- Установка цвета для текстуры
+        surface.SetMaterial(hg_icon)  -- Установка используемой текстуры
+        surface.DrawTexturedRect(hungerX - iconSize + 330, hungerY, iconSize, iconSize)
+
     end)
 end
