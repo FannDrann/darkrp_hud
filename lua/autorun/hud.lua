@@ -160,8 +160,9 @@ if CLIENT then
 -- Деньги
         local money = DarkRP.formatMoney(ply:getDarkRPVar("money") or 0)
         surface.SetFont("Roboto-Bold-2")
-        surface.SetTextPos(moneyX + 10, moneyY)
-        surface.DrawText("Токены: " .. money)
+        surface.SetTextColor(255, 255, 255, 255)
+        surface.SetTextPos(moneyX - 1370 , moneyY + 10)
+        surface.DrawText(money)
 
 -- Иконка здоровья
         local iconSize = 24
