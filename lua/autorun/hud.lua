@@ -3,6 +3,7 @@ if CLIENT then
     local hideHUD = {
         ["CHudHealth"] = true,
         ["CHudBattery"] = true,
+        ["DarkRP_Hungermod"] = true,
     }
 
     surface.CreateFont("Roboto-Bold", {

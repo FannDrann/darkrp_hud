@@ -30,7 +30,6 @@ if CLIENT then
 
         local ammoText = ammoClip .. " / " .. ammoReserve
 
-        surface.SetFont("MyHudFont")  -- Используем новый шрифт
         local textWidth, textHeight = surface.GetTextSize(ammoText)
 
         local x = ScrW() - textWidth - 20
